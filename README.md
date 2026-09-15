@@ -11,7 +11,7 @@ This pipeline automates the entire market data lifecycle: from multi-source coll
 
 ---
 
-## 🎯 Domain Data Collection Targets
+##  Domain Data Collection Targets
 
 | Domain | Collected Metrics & Features | Primary Collector File |
 | :--- | :--- | :--- |
@@ -20,7 +20,7 @@ This pipeline automates the entire market data lifecycle: from multi-source coll
 
 ---
 
-## 🏗️ System Architecture
+##  System Architecture
 
 Data flows through a structured **5-stage processing pipeline**:
 
@@ -64,7 +64,7 @@ Data flows through a structured **5-stage processing pipeline**:
 
 ---
 
-## 🔄 Main Pipeline Flow
+##  Main Pipeline Flow
 
 ```text
 Data Sources (Products & Startups)
@@ -82,7 +82,7 @@ Dashboard (dashboard/app.py) & REST API Server (src/server.py)
 
 ---
 
-## 📁 Directory & Module Structure
+##  Directory & Module Structure
 
 ```text
 CognitiveDataProcessingPipeline/
@@ -140,7 +140,7 @@ CognitiveDataProcessingPipeline/
 
 ---
 
-## 🧩 Component Specifications
+##  Component Specifications
 
 ### 1. Collectors (`src/products/` & `src/startups/`)
 - **Product Collector** ([`src/products/collector.py`](src/products/collector.py)): Pulls product specifications, user reviews, ratings, and technical usage metadata.
@@ -167,7 +167,7 @@ CognitiveDataProcessingPipeline/
 
 ---
 
-## ✨ Key Highlights
+##  Key Highlights
 
 - **Decoupled Architecture**: 5 independent pipeline stages operating with clear data contracts.
 - **Automated Data Cleaning**: Eliminates missing values, sanitizes text, and removes duplicate entries.
@@ -178,13 +178,13 @@ CognitiveDataProcessingPipeline/
 
 ---
 
-## 💻 Tech Stack
+##  Tech Stack
 
 **Python 3.9+** · `Pandas` · `NumPy` · `scikit-learn` · `FastAPI` · `Uvicorn` · `Pydantic` · `python-dotenv` · `pytest`
 
 ---
 
-## ⚡ Installation & Setup
+##  Installation & Setup
 
 ### 1. Clone & Navigate
 ```bash
@@ -215,48 +215,35 @@ cp .env.example .env
 
 ---
 
-## 🚀 Run Instructions
+##  Run Instructions
 
-### 🏃 1. CLI Pipeline Mode
+###  1. CLI Pipeline Mode
 To trigger end-to-end data ingestion, cleaning, feature extraction, and storage:
 ```bash
 python -m src.main
 ```
 
-### 🌐 2. REST API Server Mode
+###  2. REST API Server Mode
 To launch the FastAPI server:
 ```bash
 python -m src.server
 ```
 *Access interactive API documentation at `http://localhost:8000/docs`.*
 
-### 📊 3. Web Dashboard Mode
+###  3. Web Dashboard Mode
 To launch the interactive visual analytics dashboard:
 ```bash
 python dashboard/app.py
 ```
 
-### 🧪 4. Run Test Suite
+###  4. Run Test Suite
 To run unit tests across all modules:
 ```bash
 python -m unittest discover -s tests
 ```
 
----
 
-## 📈 Results
-
-Summary of records processed in a complete pipeline run:
-
-| Domain | Raw Ingested Records | Cleaned Records | Enriched Output | Pipeline Status |
-| :--- | ---: | ---: | ---: | :--- |
-| **Products** | 1,000 | 1,000 | 1,000 | Cleaned & Enriched |
-| **Startups** | 1,000 | 1,000 | 1,000 | Cleaned & Enriched |
-| **Total** | **2,000** | **2,000** | **2,000** | **Completed Successfully** |
-
----
-
-## 💾 Output Lifecycle
+##  Output Lifecycle
 
 Results are automatically persisted into structured data folders:
 
@@ -279,7 +266,7 @@ data/
 
 ---
 
-## 💡 What I Learned
+##  What I Learned
 
 - **Resilient Pipeline Design**: Structuring an end-to-end 5-stage pipeline where data ingestion, preprocessing, AI analysis, storage, and visualization operate independently.
 - **Data Quality Engineering**: Handling noisy external payloads through HTML stripping, missing value imputation, and Pydantic schema validation.
@@ -288,7 +275,7 @@ data/
 
 ---
 
-## 🔮 Future Roadmap
+##  Future Roadmap
 
 - [ ] PostgreSQL / SQLite Database integration
 - [ ] Scheduled background cron jobs for recurring data ingestion
